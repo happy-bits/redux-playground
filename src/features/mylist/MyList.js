@@ -22,7 +22,7 @@ export function MyList() {
         <>
             <h1>{header}</h1>
 
-            <div class="table">
+            <div className="table">
                 {products.map(p =>
 
                     <div key={p.id} className="row">

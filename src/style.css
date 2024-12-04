@@ -1,6 +1,52 @@
-.big {
-    font-size: 30px;
+/* NAVIGATION */
+nav {
+    display: flex;
+    /* column-gap: 10px; */
+    background-color: #aaa;
+    padding: 0 20px
 }
+
+nav a {
+    color: black;
+    padding: 20px;
+}
+
+nav a:hover {
+    background-color: yellow;
+}
+
+/* OTHER */
+
+body {
+    margin: 0;
+}
+
+body,
+button,
+input {
+    font-family: Arial;
+    font-size: 20px;
+}
+
+main {
+    padding: 20px;
+}
+
+button,
+input {
+    padding: 10px 20px;
+}
+
+
+/* UTILITIES */
+
+.table {
+    border: solid 1px;
+    /* outline: solid 1px; */
+    /* padding: 0 20px; */
+}
+
+
 
 .row {
     display: flex;
@@ -15,33 +61,15 @@
 
 .col {
     flex: 1;
+    align-self: baseline;
 }
 
-.table {
-    border: solid 1px;
-    /* outline: solid 1px; */
-    /* padding: 0 20px; */
+.big {
+    font-size: 30px;
 }
 
-body,
-button,
-input {
-    font-family: Arial;
-    font-size: 20px;
-}
 
-nav {
-    display: flex;
-    column-gap: 10px;
-}
 
-nav a {
-    color: black;
-}
-
-nav a:hover {
-    background-color: yellow;
-}
 
 .active {
     color: red

@@ -1,5 +1,11 @@
+import { Counter } from "../features/counter/Counter";
+import { Textbox } from "../features/textbox/Textbox";
+
 export default function Page02() {
     return (
-        <h1>Page 02</h1>
+        <>
+            <Counter />
+            <Textbox />
+        </>
     )
 }
