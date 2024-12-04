@@ -1,20 +1,17 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 // import { useSelector, useDispatch } from 'react-redux'
 
 export function MyList() {
 
-    const list = [
-
-        { id: 1, name: "Ost", amount: 2, price: 7 },
-        { id: 2, name: "Bröd", amount: 3, price: 12 },
-
-    ]
+    const products = useSelector(state => state.mylist.products)
+    const header = useSelector(state => state.mylist.header)
 
     return (
         <>
-            <h1>My list</h1>
+            <h1>{header}</h1>
 
-            {list.map(p =>
+            {products.map(p =>
 
                 <div key={p.id} className="row">
                     <div className="col">{p.name}</div>
