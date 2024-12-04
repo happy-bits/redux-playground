@@ -27,18 +27,24 @@ export const mylistSlice = createSlice({
         },
 
         adjustAmountBy: (state, action) => {
-            console.log(action.payload)
             for (let row of state.products) {
                 if (row.id === action.payload.id) {
                     row.amount += action.payload.diff
                 }
             }
 
+        },
+
+        addProduct: (state, action) => {
+            action.payload.amount = 0;
+            action.payload.id = Math.max(0, ...state.products.map(product => product.id)) + 1;
+            state.products.push(action.payload)
+
         }
     }
 });
 
-export const { adjustAmount, adjustAmountBy } = mylistSlice.actions
+export const { adjustAmount, adjustAmountBy, addProduct } = mylistSlice.actions
 
 // export const selectTotalPrice = createSelector(
 //     (state) => state.mylist.products,

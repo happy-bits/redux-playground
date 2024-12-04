@@ -44,6 +44,10 @@ label {
 
 /* UTILITIES */
 
+.mb-2 {
+    margin-bottom: 20px;
+}
+
 .box {
     border: solid 1px;
     padding: 20px;

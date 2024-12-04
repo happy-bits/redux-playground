@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { adjustAmount, adjustAmountBy } from './mylistSlice'
+import { adjustAmount, adjustAmountBy, addProduct } from './mylistSlice'
 
 export function MyList() {
 
@@ -23,9 +23,36 @@ export function MyList() {
 
     const dispatch = useDispatch()
 
+    const newProductNameRef = React.createRef();
+    const newProductPriceRef = React.createRef();
+
     return (
         <>
             <h1>{header}</h1>
+
+            <div className="box mb-2">
+
+                <label>
+                    Produktnamn
+                    <input ref={newProductNameRef} />
+                </label>
+                <label>
+                    Pris
+                    <input type="number" ref={newProductPriceRef} />
+                </label>
+
+                <button
+                    onClick={e =>
+                        dispatch(
+                            addProduct({
+                                name: newProductNameRef.current.value,
+                                price: toNumber(newProductPriceRef.current.value)
+                            })
+                        )
+                    }
+                >Ok</button>
+
+            </div>
 
             <div className="table">
                 {products.map(p =>
@@ -74,20 +101,7 @@ export function MyList() {
                 Sum: {totalPrice()}kr
             </p>
 
-            <div class="box">
 
-                <label>
-                    Produktnamn
-                    <input />
-                </label>
-                <label>
-                    Pris
-                    <input />
-                </label>
-
-                <button>Ok</button>
-
-            </div>
         </>
     )
 }
