@@ -1,9 +1,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment, double } from './counterSlice'
+import { decrement, increment, double, incrementByAmount, toggleBig } from './counterSlice'
 
 export function Counter() {
     const count = useSelector((state) => state.counter.value)
+    const isBig = useSelector((state) => state.counter.isBig)
     const dispatch = useDispatch()
 
     return (
@@ -15,7 +16,7 @@ export function Counter() {
                 >
                     Increment
                 </button>
-                <span>{count}</span>
+                <span className={isBig ? "big" : ""}>{count}</span>
                 <button
                     aria-label="Decrement value"
                     onClick={() => dispatch(decrement())}
@@ -27,6 +28,18 @@ export function Counter() {
                     onClick={() => dispatch(double())}
                 >
                     Double
+                </button>
+
+                <button
+                    onClick={() => dispatch(incrementByAmount(123))}
+                >
+                    Increment by 123
+                </button>
+
+                <button
+                    onClick={() => dispatch(toggleBig())}
+                >
+                    Toggle big
                 </button>
             </div>
         </div>

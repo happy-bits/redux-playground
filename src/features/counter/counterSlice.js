@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     value: 0,
+    isBig: false
 }
 
 export const counterSlice = createSlice({
@@ -26,10 +27,14 @@ export const counterSlice = createSlice({
         double: (state) => {
             state.value *= 2
         },
+
+        toggleBig: (state) => {
+            state.isBig = !state.isBig
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, double } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, double, toggleBig } = counterSlice.actions
 
 export default counterSlice.reducer
