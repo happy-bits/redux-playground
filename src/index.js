@@ -7,13 +7,16 @@ import { Textbox } from './features/textbox/Textbox';
 
 import "./style.css"
 import { MyList } from './features/mylist/MyList';
+import Page01 from './pages/Page01';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <Counter />
+
+      <Page01 />
+      {/* <Counter />
       <Textbox />
-      <MyList />
+      <MyList /> */}
     </Provider>
   </React.StrictMode>
 );

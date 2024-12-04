@@ -1,4 +1,4 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     header: "This is my list",
@@ -38,10 +38,24 @@ export const mylistSlice = createSlice({
 
 export const { adjustAmount } = mylistSlice.actions
 
-export const selectTotalPrice = createSelector(
-    (state) => state.mylist.products,
-    (products) =>
-        products.reduce((total, product) => total + product.amount * product.price, 0) // Summera produkterna
-);
+// export const selectTotalPrice = createSelector(
+//     (state) => state.mylist.products,
+//     (products) =>
+//         products.reduce((total, product) => total + product.amount * product.price, 0) // Summera produkterna
+// );
+
+// export const selectTotalPrice = createSelector(
+//     state => state.mylist.products, // anger input till nästa parameter
+//     products => {
+//         let total = 0
+//         for (let p of products) {
+//             total += p.amount * p.price
+//         }
+//         return total
+//     }
+// );
+
+// return 123
+
 
 export default mylistSlice.reducer

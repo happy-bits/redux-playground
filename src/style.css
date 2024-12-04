@@ -4,8 +4,28 @@
 
 .row {
     display: flex;
+    border-bottom: solid 1px;
+    padding: 20px;
+}
+
+.row:last-child {
+    /* border-color: red; */
+    border-bottom: 0;
 }
 
 .col {
     flex: 1;
+}
+
+.table {
+    border: solid 1px;
+    /* outline: solid 1px; */
+    /* padding: 0 20px; */
+}
+
+body,
+button,
+input {
+    font-family: Arial;
+    font-size: 20px;
 }
