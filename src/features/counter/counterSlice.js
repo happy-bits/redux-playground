@@ -31,10 +31,13 @@ export const counterSlice = createSlice({
         toggleBig: (state) => {
             state.isBig = !state.isBig
         },
+        set: (state, action) => {
+            state.value = action.payload
+        },
     },
 })
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount, double, toggleBig } = counterSlice.actions
+export const { increment, decrement, incrementByAmount, double, toggleBig, set } = counterSlice.actions
 
 export default counterSlice.reducer

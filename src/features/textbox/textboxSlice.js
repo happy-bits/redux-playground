@@ -9,7 +9,6 @@ export const textboxSlice = createSlice({
     initialState,
     reducers: {
         setText: (state, action) => {
-            console.log("hej")
             state.text = action.payload
         },
         clear: (state) => {
