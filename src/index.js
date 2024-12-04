@@ -2,21 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
-import { Counter } from './features/counter/Counter';
-import { Textbox } from './features/textbox/Textbox';
+import { BrowserRouter } from 'react-router-dom';
 
+import { Routing } from './Routing';
 import "./style.css"
-import { MyList } from './features/mylist/MyList';
-import Page01 from './pages/Page01';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-
-      <Page01 />
-      {/* <Counter />
-      <Textbox />
-      <MyList /> */}
+      <BrowserRouter>
+        <Routing />
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

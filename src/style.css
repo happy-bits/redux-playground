@@ -29,3 +29,20 @@ input {
     font-family: Arial;
     font-size: 20px;
 }
+
+nav {
+    display: flex;
+    column-gap: 10px;
+}
+
+nav a {
+    color: black;
+}
+
+nav a:hover {
+    background-color: yellow;
+}
+
+.active {
+    color: red
+}
