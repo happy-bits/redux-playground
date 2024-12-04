@@ -12,8 +12,8 @@ const initialState = {
 }
 
 function stringToNumber(str) {
-    const num = parseFloat(str); // Försök omvandla strängen till ett flyttal
-    return isNaN(num) ? 0 : num; // Kontrollera om det är ett giltigt tal, annars returnera 0
+    const num = parseFloat(str);
+    return isNaN(num) ? 0 : num;
 }
 
 export const mylistSlice = createSlice({
