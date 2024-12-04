@@ -1,7 +1,7 @@
 import { NavLink, Outlet } from "react-router-dom";
+import "./style.css"
 
 export function BasicLayout() {
-
 
     return (
         <>

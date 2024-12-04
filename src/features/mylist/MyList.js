@@ -73,6 +73,21 @@ export function MyList() {
             <p>
                 Sum: {totalPrice()}kr
             </p>
+
+            <div class="box">
+
+                <label>
+                    Produktnamn
+                    <input />
+                </label>
+                <label>
+                    Pris
+                    <input />
+                </label>
+
+                <button>Ok</button>
+
+            </div>
         </>
     )
 }
