@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { adjustAmount, adjustAmountBy, addProduct } from './mylistSlice'
 
@@ -21,37 +21,43 @@ export function MyList() {
         return isNaN(num) ? 0 : num;
     }
 
+    const handleAddProduct = () => {
+        dispatch(addProduct({
+            name: newProductName,
+            price: toNumber(newProductPrice)
+        }));
+        setNewProductName('');
+        setNewProductPrice('');
+    };
+
+
     const dispatch = useDispatch()
 
-    const newProductNameRef = React.createRef();
-    const newProductPriceRef = React.createRef();
+    const [newProductName, setNewProductName] = useState('');
+    const [newProductPrice, setNewProductPrice] = useState('');
 
     return (
         <>
             <h1>{header}</h1>
 
             <div className="box mb-2">
-
                 <label>
                     Produktnamn
-                    <input ref={newProductNameRef} />
+                    <input
+                        value={newProductName}
+                        onChange={(e) => setNewProductName(e.target.value)}
+                    />
                 </label>
                 <label>
                     Pris
-                    <input type="number" ref={newProductPriceRef} />
+                    <input
+                        type="number"
+                        value={newProductPrice}
+                        onChange={(e) => setNewProductPrice(e.target.value)}
+                    />
                 </label>
 
-                <button
-                    onClick={e =>
-                        dispatch(
-                            addProduct({
-                                name: newProductNameRef.current.value,
-                                price: toNumber(newProductPriceRef.current.value)
-                            })
-                        )
-                    }
-                >Ok</button>
-
+                <button onClick={handleAddProduct}>Ok</button>
             </div>
 
             <div className="table">
