@@ -11,10 +11,7 @@ const initialState = {
 
 }
 
-function stringToNumber(str) {
-    const num = parseFloat(str);
-    return isNaN(num) ? 0 : num;
-}
+
 
 export const mylistSlice = createSlice({
     name: 'mylist',
@@ -22,21 +19,26 @@ export const mylistSlice = createSlice({
     reducers: {
         adjustAmount: (state, action) => {
 
-            console.log(action.payload)
-
             for (let row of state.products) {
                 if (row.id === action.payload.id) {
-
-
-                    row.amount = stringToNumber(action.payload.amount)
-
+                    row.amount = action.payload.amount
                 }
             }
+        },
+
+        adjustAmountBy: (state, action) => {
+            console.log(action.payload)
+            for (let row of state.products) {
+                if (row.id === action.payload.id) {
+                    row.amount += action.payload.diff
+                }
+            }
+
         }
     }
 });
 
-export const { adjustAmount } = mylistSlice.actions
+export const { adjustAmount, adjustAmountBy } = mylistSlice.actions
 
 // export const selectTotalPrice = createSelector(
 //     (state) => state.mylist.products,
@@ -55,7 +57,6 @@ export const { adjustAmount } = mylistSlice.actions
 //     }
 // );
 
-// return 123
 
 
 export default mylistSlice.reducer
