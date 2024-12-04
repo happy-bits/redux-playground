@@ -17,7 +17,6 @@ export const textboxSlice = createSlice({
     },
 })
 
-// Action creators are generated for each case reducer function
 export const { setText, clear } = textboxSlice.actions
 
 export default textboxSlice.reducer

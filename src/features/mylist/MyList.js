@@ -6,7 +6,6 @@ export function MyList() {
 
     const products = useSelector(state => state.mylist.products)
     const header = useSelector(state => state.mylist.header)
-    // const totalPrice = useSelector(selectTotalPrice);
 
     function totalPrice() {
         let total = 0

@@ -45,24 +45,33 @@ export const mylistSlice = createSlice({
 });
 
 export const { adjustAmount, adjustAmountBy, addProduct } = mylistSlice.actions
+/*
 
-// export const selectTotalPrice = createSelector(
-//     (state) => state.mylist.products,
-//     (products) =>
-//         products.reduce((total, product) => total + product.amount * product.price, 0) // Summera produkterna
-// );
+Alternativ med "createSelector"
 
-// export const selectTotalPrice = createSelector(
-//     state => state.mylist.products, // anger input till nästa parameter
-//     products => {
-//         let total = 0
-//         for (let p of products) {
-//             total += p.amount * p.price
-//         }
-//         return total
-//     }
-// );
+ export const selectTotalPrice = createSelector(
+    (state) => state.mylist.products,
+    (products) =>
+    products.reduce((total, product) => total + product.amount * product.price, 0) // Summera produkterna
 
+    );
+*/
 
+/*
+
+Samma men utan "reduce"
+
+export const selectTotalPrice = createSelector(
+    state => state.mylist.products, // anger input till nästa parameter
+    products => {
+        let total = 0
+        for (let p of products) {
+            total += p.amount * p.price
+        }
+        return total
+    }
+);
+
+*/
 
 export default mylistSlice.reducer
