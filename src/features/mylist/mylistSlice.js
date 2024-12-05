@@ -19,6 +19,9 @@ export const mylistSlice = createSlice({
     reducers: {
         adjustAmount: (state, action) => {
 
+
+            // action.payload = {id: 2, amount: 50}
+
             for (let row of state.products) {
                 if (row.id === action.payload.id) {
                     row.amount = action.payload.amount
@@ -39,7 +42,6 @@ export const mylistSlice = createSlice({
             action.payload.amount = 0;
             action.payload.id = Math.max(0, ...state.products.map(product => product.id)) + 1;
             state.products.push(action.payload)
-
         }
     }
 });
