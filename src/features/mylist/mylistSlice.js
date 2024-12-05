@@ -24,7 +24,7 @@ export const mylistSlice = createSlice({
 
             for (let row of state.products) {
                 if (row.id === action.payload.id) {
-                    row.amount = action.payload.amount
+                    row.amount = Math.max(0, action.payload.amount)
                 }
             }
         },
@@ -33,6 +33,7 @@ export const mylistSlice = createSlice({
             for (let row of state.products) {
                 if (row.id === action.payload.id) {
                     row.amount += action.payload.diff
+                    row.amount = Math.max(0, row.amount)
                 }
             }
 
@@ -40,6 +41,8 @@ export const mylistSlice = createSlice({
 
         addProduct: (state, action) => {
             action.payload.amount = 0;
+            action.payload.price = Math.max(0, action.payload.price)
+            action.payload.weight = Math.max(0, action.payload.weight)
             action.payload.id = Math.max(0, ...state.products.map(product => product.id)) + 1;
             state.products.push(action.payload)
         },

@@ -45,11 +45,13 @@ export function MyList() {
         }));
         setNewProductName('');
         setNewProductPrice('');
+        setNewWeight('');
     };
 
     const handleClear = () => {
         setNewProductName('');
         setNewProductPrice('');
+        setNewWeight('');
     };
 
     const dispatch = useDispatch()
