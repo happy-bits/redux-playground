@@ -4,8 +4,8 @@ const initialState = {
     header: "This is my list",
     products: [
 
-        { id: 1, name: "Ost", amount: 5, price: 7 },
-        { id: 2, name: "Bröd", amount: 3, price: 12 },
+        { id: 1, name: "Ost", amount: 5, price: 7, weight: 1.2 },
+        { id: 2, name: "Bröd", amount: 3, price: 12, weight: 0.7 },
 
     ]
 

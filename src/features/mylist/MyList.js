@@ -23,7 +23,8 @@ export function MyList() {
     const handleAddProduct = () => {
         dispatch(addProduct({
             name: newProductName,
-            price: toNumber(newProductPrice)
+            price: toNumber(newProductPrice),
+            weight: toNumber(newWeight)
         }));
         setNewProductName('');
         setNewProductPrice('');
@@ -38,6 +39,7 @@ export function MyList() {
 
     const [newProductName, setNewProductName] = useState('');
     const [newProductPrice, setNewProductPrice] = useState('');
+    const [newWeight, setNewWeight] = useState('');
 
     return (
         <>
@@ -59,6 +61,14 @@ export function MyList() {
                         onChange={(e) => setNewProductPrice(e.target.value)}
                     />
                 </label>
+                <label>
+                    Vikt
+                    <input
+                        type="number"
+                        value={newWeight}
+                        onChange={(e) => setNewWeight(e.target.value)}
+                    />
+                </label>
 
                 <button onClick={handleAddProduct}>Ok</button>
                 <button onClick={handleClear}>Clear</button>
@@ -70,6 +80,7 @@ export function MyList() {
                     <div key={p.id} className="row">
                         <div className="col">{p.name}</div>
                         <div className="col">{p.price}kr/st</div>
+                        <div className="col">{p.weight}kg</div>
                         <div className="col">
                             <input
 
