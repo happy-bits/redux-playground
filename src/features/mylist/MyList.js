@@ -106,6 +106,16 @@ export function MyList() {
                             +2
                         </button>
 
+
+                        <button
+
+                            onClick={e =>
+                                dispatch(
+                                    adjustAmount({ id: p.id, amount: 0 })
+                                )}>
+                            Reset
+                        </button>
+
                     </div>
 
                 )}
