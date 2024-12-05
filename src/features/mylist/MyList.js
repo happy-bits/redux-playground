@@ -29,6 +29,10 @@ export function MyList() {
         setNewProductPrice('');
     };
 
+    const handleClear = () => {
+        setNewProductName('');
+        setNewProductPrice('');
+    };
 
     const dispatch = useDispatch()
 
@@ -57,6 +61,7 @@ export function MyList() {
                 </label>
 
                 <button onClick={handleAddProduct}>Ok</button>
+                <button onClick={handleClear}>Clear</button>
             </div>
 
             <div className="table">
