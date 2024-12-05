@@ -15,6 +15,14 @@ export function MyList() {
         return total
     }
 
+    function totalWeight() {
+        let total = 0
+        for (let p of products) {
+            total += p.amount * p.weight
+        }
+        return total
+    }
+
     function toNumber(str) {
         const num = parseFloat(str);
         return isNaN(num) ? 0 : num;
@@ -149,7 +157,9 @@ export function MyList() {
             <p>
                 Sum: {totalPrice()}kr
             </p>
-
+            <p>
+                Sum weight: {totalWeight()}kg
+            </p>
 
         </>
     )
