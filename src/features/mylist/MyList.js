@@ -97,6 +97,15 @@ export function MyList() {
                             +1
                         </button>
 
+                        <button
+
+                            onClick={e =>
+                                dispatch(
+                                    adjustAmountBy({ id: p.id, diff: +2 })
+                                )}>
+                            +2
+                        </button>
+
                     </div>
 
                 )}
