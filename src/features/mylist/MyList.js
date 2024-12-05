@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { adjustAmount, adjustAmountBy, addProduct, removeProduct } from './mylistSlice'
+import { adjustAmount, adjustAmountBy, addProduct, removeProduct, allAmountsToZero } from './mylistSlice'
 
 export function MyList() {
 
@@ -174,6 +174,15 @@ export function MyList() {
             <p>
                 Nr of products: {totalNrOfProducts()}st
             </p>
+
+            <button
+
+                onClick={e =>
+                    dispatch(
+                        allAmountsToZero()
+                    )}>
+                All amounts to 0
+            </button>
         </>
     )
 }

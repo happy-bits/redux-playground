@@ -49,11 +49,17 @@ export const mylistSlice = createSlice({
 
         removeProduct: (state, action) => {
             state.products = state.products.filter(product => product.id !== action.payload.id)
+        },
+
+        allAmountsToZero: (state) => {
+            for (let row of state.products) {
+                row.amount = 0
+            }
         }
     }
 });
 
-export const { adjustAmount, adjustAmountBy, addProduct, removeProduct } = mylistSlice.actions
+export const { adjustAmount, adjustAmountBy, addProduct, removeProduct, allAmountsToZero } = mylistSlice.actions
 /*
 
 Alternativ med "createSelector"
