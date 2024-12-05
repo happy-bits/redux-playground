@@ -20,6 +20,7 @@ export function MyList() {
         for (let p of products) {
             total += p.amount * p.weight
         }
+        total = Math.round(total * 10) / 10;
         return total
     }
 
