@@ -42,11 +42,15 @@ export const mylistSlice = createSlice({
             action.payload.amount = 0;
             action.payload.id = Math.max(0, ...state.products.map(product => product.id)) + 1;
             state.products.push(action.payload)
+        },
+
+        removeProduct: (state, action) => {
+            state.products = state.products.filter(product => product.id !== action.payload.id)
         }
     }
 });
 
-export const { adjustAmount, adjustAmountBy, addProduct } = mylistSlice.actions
+export const { adjustAmount, adjustAmountBy, addProduct, removeProduct } = mylistSlice.actions
 /*
 
 Alternativ med "createSelector"

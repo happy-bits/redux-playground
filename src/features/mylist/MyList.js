@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { adjustAmount, adjustAmountBy, addProduct } from './mylistSlice'
+import { adjustAmount, adjustAmountBy, addProduct, removeProduct } from './mylistSlice'
 
 export function MyList() {
 
@@ -130,6 +130,15 @@ export function MyList() {
                                     adjustAmount({ id: p.id, amount: 0 })
                                 )}>
                             Reset
+                        </button>
+
+                        <button
+
+                            onClick={e =>
+                                dispatch(
+                                    removeProduct({ id: p.id })
+                                )}>
+                            Remove
                         </button>
 
                     </div>
