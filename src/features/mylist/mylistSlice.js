@@ -6,6 +6,8 @@ const initialState = {
 
         { id: 1, name: "Ost", amount: 5, price: 7, weight: 1.2 },
         { id: 2, name: "Bröd", amount: 3, price: 12, weight: 0.7 },
+        { id: 3, name: "Mjöl", amount: 4, price: 18, weight: 1.0 },
+        { id: 4, name: "Apelsin", amount: 20, price: 3, weight: 0.2 },
 
     ]
 
