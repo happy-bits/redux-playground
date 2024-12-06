@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { adjustAmount, adjustAmountBy, addProduct, removeProduct, allAmountsToZero } from './mylistSlice'
+import {
+    adjustAmount, adjustAmountBy, addProduct, removeProduct, allAmountsToZero,
+    moveDown, moveUp
+} from './mylistSlice'
 
 export function MyList() {
 
@@ -98,8 +101,25 @@ export function MyList() {
 
                     <div key={p.id} className="row">
                         <div className="col move-buttons">
-                            {index > 0 && <button>▲</button>}
-                            {index < allProducts.length - 1 && <button>▼</button>}
+                            {index > 0 && <button
+
+                                onClick={e => dispatch(
+
+                                    moveUp({ id: p.id })
+
+                                )}
+                            >▲</button>}
+
+                            {index < allProducts.length - 1 && <button
+
+
+                                onClick={e => dispatch(
+
+                                    moveDown({ id: p.id })
+
+                                )}
+                            >▼</button>}
+
                         </div>
                         <div className="col">{p.name}</div>
                         <div className="col">{p.price}kr/st</div>

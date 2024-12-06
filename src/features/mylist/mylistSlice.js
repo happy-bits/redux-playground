@@ -57,11 +57,34 @@ export const mylistSlice = createSlice({
             for (let row of state.products) {
                 row.amount = 0
             }
+        },
+
+        moveUp: (state, action) => {
+            const index = state.products.findIndex(product => product.id === action.payload.id)
+
+            if (index > 0) {
+                const temp = state.products[index]
+                state.products[index] = state.products[index - 1]
+                state.products[index - 1] = temp
+            }
+        },
+
+        moveDown: (state, action) => {
+            const index = state.products.findIndex(product => product.id === action.payload.id)
+
+            if (index < state.products.length - 1) {
+                const temp = state.products[index]
+                state.products[index] = state.products[index + 1]
+                state.products[index + 1] = temp
+            }
         }
+
+
     }
 });
 
-export const { adjustAmount, adjustAmountBy, addProduct, removeProduct, allAmountsToZero } = mylistSlice.actions
+export const { adjustAmount, adjustAmountBy, addProduct, removeProduct, allAmountsToZero,
+    moveUp, moveDown } = mylistSlice.actions
 /*
 
 Alternativ med "createSelector"
