@@ -42,6 +42,12 @@ label {
     margin: 20px 0
 }
 
+.move-buttons {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
 /* UTILITIES */
 
 .mb-2 {
@@ -64,6 +70,7 @@ label {
     display: flex;
     border-bottom: solid 1px;
     padding: 20px;
+    align-items: center;
 }
 
 .row:last-child {
@@ -73,7 +80,7 @@ label {
 
 .col {
     flex: 1;
-    align-self: baseline;
+    align-self: center;
 }
 
 .big {

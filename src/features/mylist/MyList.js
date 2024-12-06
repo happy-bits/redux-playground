@@ -97,6 +97,10 @@ export function MyList() {
                 {products.map(p =>
 
                     <div key={p.id} className="row">
+                        <div className="col move-buttons">
+                            <button>▲</button>
+                            <button>▼</button>
+                        </div>
                         <div className="col">{p.name}</div>
                         <div className="col">{p.price}kr/st</div>
                         <div className="col">{p.weight}kg</div>
