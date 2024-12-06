@@ -94,12 +94,12 @@ export function MyList() {
             </div>
 
             <div className="table">
-                {products.map(p =>
+                {products.map((p, index, allProducts) =>
 
                     <div key={p.id} className="row">
                         <div className="col move-buttons">
-                            <button>▲</button>
-                            <button>▼</button>
+                            {index > 0 && <button>▲</button>}
+                            {index < allProducts.length - 1 && <button>▼</button>}
                         </div>
                         <div className="col">{p.name}</div>
                         <div className="col">{p.price}kr/st</div>
